@@ -1,59 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--ap-bg);
+  --color-foreground: var(--ap-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Andres Project landing addon: pega esto al final de app/globals.css si hace falta */
 :root {
-  --ap-bg: #0A0A0B;
-  --ap-bg-elevated: #111113;
-  --ap-card: #0F0F11;
-  --ap-border: #1F1F23;
-  --ap-text: #FAFAFA;
-  --ap-muted: #8B8B93;
-  --ap-accent: oklch(0.88 0.20 130);
-}
-html { scroll-behavior: smooth; }
-body { background: var(--ap-bg); }
-@media (max-width: 768px) { body { padding-bottom: 76px; } }
-
-:root {
-  --ap-bg: #0a0a0b;
-  --ap-elevated: #111113;
-  --ap-card: #0f0f11;
-  --ap-border: #1f1f23;
-  --ap-border-strong: #2a2a30;
+  --ap-bg: #07080a;
+  --ap-bg-elevated: #0d0f13;
+  --ap-card: rgba(17, 19, 24, 0.78);
+  --ap-card-strong: rgba(22, 25, 31, 0.94);
+  --ap-border: rgba(255, 255, 255, 0.1);
+  --ap-border-strong: rgba(255, 255, 255, 0.18);
 
   --ap-text: #fafafa;
-  --ap-muted: #8b8b93;
-  --ap-dim: #5a5a62;
+  --ap-muted: #a2a6b0;
+  --ap-dim: #6b7280;
 
-  --ap-accent: oklch(0.88 0.2 130);
-  --ap-accent-glow: oklch(0.88 0.2 130 / 0.35);
-  --ap-accent-soft: oklch(0.88 0.2 130 / 0.1);
-  --ap-accent-dim: oklch(0.88 0.2 130 / 0.2);
+  --ap-accent: #c6ff5f;
+  --ap-accent-2: #52f0d0;
+  --ap-accent-glow: rgba(198, 255, 95, 0.2);
+  --ap-accent-soft: rgba(198, 255, 95, 0.09);
+  --ap-accent-dim: rgba(198, 255, 95, 0.24);
+  --ap-shadow: 0 24px 90px rgba(0, 0, 0, 0.38);
 }
 
 * {
@@ -68,8 +39,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(189, 255, 88, 0.08), transparent 34%),
-    radial-gradient(circle at top right, rgba(0, 194, 168, 0.06), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 420px),
+    radial-gradient(circle at 18% 0%, rgba(198, 255, 95, 0.11), transparent 34%),
+    radial-gradient(circle at 82% 4%, rgba(82, 240, 208, 0.08), transparent 30%),
     var(--ap-bg);
   color: var(--ap-text);
   font-family:
@@ -91,9 +63,25 @@ button {
   cursor: pointer;
 }
 
+button,
+a {
+  outline-color: var(--ap-accent);
+  outline-offset: 4px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--ap-accent);
+}
+
 ::selection {
   background: var(--ap-accent);
   color: #000;
+}
+
+.ap-premium-border {
+  border-color: var(--ap-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), var(--ap-shadow);
 }
 
 @media (max-width: 760px) {
