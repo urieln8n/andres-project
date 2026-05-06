@@ -64,19 +64,35 @@ export default function Home() {
             <button onClick={() => scrollToId("faq")}>FAQ</button>
           </nav>
 
-          <button
-            onClick={() => scrollToId("cta")}
-            className="hidden rounded-full bg-[linear-gradient(135deg,var(--ap-accent),var(--ap-accent-2))] px-5 py-3 text-sm font-black text-black shadow-[0_16px_44px_var(--ap-accent-glow)] transition hover:-translate-y-0.5 hover:shadow-[0_20px_54px_var(--ap-accent-glow)] md:block"
-          >
-            Pedir diagnóstico gratis
-          </button>
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="/login"
+              className="rounded-full border border-white/10 bg-white/[0.06] px-5 py-3 text-sm font-black text-white transition hover:border-white/20 hover:bg-white/[0.1]"
+            >
+              Entrar
+            </a>
+            <button
+              onClick={() => scrollToId("cta")}
+              className="rounded-full bg-[linear-gradient(135deg,var(--ap-accent),var(--ap-accent-2))] px-5 py-3 text-sm font-black text-black shadow-[0_16px_44px_var(--ap-accent-glow)] transition hover:-translate-y-0.5 hover:shadow-[0_20px_54px_var(--ap-accent-glow)]"
+            >
+              Pedir diagnóstico gratis
+            </button>
+          </div>
 
-          <button
-            onClick={() => scrollToId("cta")}
-            className="rounded-full bg-[linear-gradient(135deg,var(--ap-accent),var(--ap-accent-2))] px-4 py-2.5 text-sm font-black text-black md:hidden"
-          >
-            Demo
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <a
+              href="/login"
+              className="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2.5 text-sm font-black text-white"
+            >
+              Entrar
+            </a>
+            <button
+              onClick={() => scrollToId("cta")}
+              className="rounded-full bg-[linear-gradient(135deg,var(--ap-accent),var(--ap-accent-2))] px-4 py-2.5 text-sm font-black text-black"
+            >
+              Demo
+            </button>
+          </div>
         </div>
       </header>
 
