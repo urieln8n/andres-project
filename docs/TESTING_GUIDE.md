@@ -1,11 +1,19 @@
 # Guía de prueba — MVP Andres Project for Pizzerías
 
+## URLs
+
+| Entorno | URL |
+|---|---|
+| Producción | https://andres-project-7i82.vercel.app |
+| Local | http://localhost:3000 |
+
 ## Requisitos previos
 
 - Proyecto corriendo: `npm run dev` → `http://localhost:3000`
 - Supabase configurado con `.env.local` (URL + ANON KEY)
 - Schema SQL ejecutado en Supabase (ver `docs/supabase/schema.sql`)
 - Políticas públicas ejecutadas (ver `docs/supabase/policies_public_menu.sql`)
+- Datos de demo cargados (ver `docs/supabase/seed.sql`)
 
 ---
 
