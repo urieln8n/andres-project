@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DashboardPanel } from "@/components/dashboard/DashboardPanel";
 import { DashboardShell } from "@/components/dashboard/DashboardShell";
+import { LogoutButton } from "@/components/auth/LogoutButton";
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { StatusBadge } from "@/components/dashboard/StatusBadge";
 import {
@@ -25,6 +26,10 @@ export default function DashboardPage() {
       title="Dashboard operativo de Pizzería Napoli"
       description="Vista demo con datos mock para validar pedidos, ventas, clientes, promociones, reseñas y automatizaciones WhatsApp antes de crear backend o login."
     >
+      <div className="flex justify-end pt-4">
+        <LogoutButton />
+      </div>
+
       <section className="grid gap-4 py-6 md:grid-cols-2 xl:grid-cols-4">
         {salesSummary.map((item) => (
           <MetricCard key={item.label} {...item} />
